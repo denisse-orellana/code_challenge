@@ -1,4 +1,4 @@
-# Code Challange 2023
+# Code Challenge 2023
 
 Project that performs ETL process with extraction, cleaning, transformation, and loading data to GCP BigQuery.
 
