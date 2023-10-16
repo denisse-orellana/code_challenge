@@ -130,6 +130,9 @@ See the results from the terminal:
 <p align="left"><img width="100%" src="./images/gcp-sdk-bigquery.png"></p>
 
 Check the schema and the preview from BigQuery:
+
+[BigQuery Table Population](https://console.cloud.google.com/bigquery?authuser=0&hl=es-419&project=int-education-project&ws=!1m5!1m4!4m3!1sint-education-project!2spopulation_data!3spopulation)
+
 <p align="left"><img width="100%" src="./images/data_bigquery.png"></p>
 
 ## Execute a Cronjob
@@ -157,7 +160,10 @@ Add the code to the editor to execute the cronjob. The default code is:
 ```
 
 My system required other specifiations to execute the code:
-<p align="left"><img width="100%" src="./images/vim.png"></p>
+
+<p align="left"><img width="100%" src="./images/cron4.png"></p>
+
+<p align="left"><img width="100%" src="./images/cron3.png"></p>
 
 ## Trello
 
