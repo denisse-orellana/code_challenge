@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap');
+
+:root {
+  --white: #fff;
+  --dark: #282828;
+  --blue: #4b57df;
+  --pink: #C850C0;
+  --yellow: #FFCC70;
+  --gray: #585858;
+  --light-gray: #B8B8B8;
+  --dark-shadow: rgba(0,0,0,0.2);
+  --light-shadow: rgba(0,0,0,0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Roboto', sans-serif;
+  font-size: 62.5%;
+}
+
+body {
+  background-color: var(--white);
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+header {
+  text-align: center;
+  border-radius: .1rem;
+  padding: 2rem;
+  margin-left: 27.5rem;
+  margin-top: 9.5rem;
+}
+
+header h1 {
+  font-size: 5rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 1rem;
+}
+
+main {
+  margin-left: 27.5rem;
+}
+
+
+#mostrarBtn, #backBtn {
+  padding: 1rem;
+  font-size: 2rem;
+  background: var(--blue);
+  color: var(--white);
+  border: var(--blue);
+  border-radius: .5rem;
+  cursor: pointer;
+}
+
+#root {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.card-product {
+  width: 250px;
+  margin-bottom: 2rem;
+  border: 1px solid var(--dark);
+  box-shadow: 0 4px 8px 0 var(--dark-shadow);
+  text-align: center;
+  padding-bottom: 2rem;
+  border-radius: .5rem;
+}
+
+.card-product img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.card-product h3 {
+  font-size: 2rem;
+  text-align: center;
+  padding: .5rem;
+}
+
+.card-product p {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  padding: .5rem;
+  color: var(--gray);
+  margin-bottom: 1rem;
+}
+
+.pay-button {
+  display: none;
+}
+
+.buy-button {
+  font-size: 2rem;
+  padding: 1rem;
+  background: var(--blue);
+  color: var(--white);
+  border: var(--blue);
+  border-radius: .5rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  float: right;
+}
+
+#mercadoLibreButton {
+  color: dark;
+  padding: 1rem;
+  font-size: 2rem;
+  background: var(--yellow);
+  color: var(--dark);
+  border: var(--yellow);
+  border-radius: .5rem;
+  cursor: pointer;
+}
+
+.card-product a {
+  color: dark;
+  padding: 1rem;
+  font-size: 2rem;
+  background: var(--yellow);
+  color: var(--dark);
+  border: var(--yellow);
+  border-radius: .5rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.cart-button {
+  margin-left: 1rem;
+  font-size: 2rem;
+  padding: .5rem;
+  background: var(--white);
+  color: var(--dark);
+  border-style: none;
+  border-radius: .5rem;
+  cursor: pointer;
+  display: inline;
+}
+
+.cart-button i {
+  font-size: 3rem;
+  vertical-align: middle;
+}
+
+.sidebar {
+  width: 24rem;
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  background: var(--white);
+  overflow-x: hidden;
+  padding: 2rem;
+  border-radius: .5rem;
+  border: 1px solid var(--dark);
+  color: var(--dark);
+}
+
+.sidebar h2 {
+  font-weight: bold;
+  font-size: 2.2rem;
+  text-align: center;
+  margin-bottom: .5rem;
+  color: var(--blue);
+}
+
+.sidebar p {
+  margin-top: 1rem;
+  font-weight: light;
+  font-size: 1.5srem;
+  /* text-align: center; */
+  color: var(--dark);
+}
+
+.sidebar li {
+  margin-top: .5rem;
+  font-weight: normal;
+  font-size: 1.5rem;
+  text-align: left;
+  list-style-type: none;
+}
+
+.remove-product-button {
+  font-size: 2rem;
+  background: var(--white);
+  border: none;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.nav-wrapper {
+  overflow: hidden;
+  background-color: var(--dark);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  font-weight: bold;
+  text-shadow: -2px 0 var(--dark), 0 1px var(--dark), 1px 0 var(--dark), 0 -1px var(--dark);
+}
+
+.nav-wrapper a {
+  color: var(--white);
+  text-align: center;
+  padding: 3rem;
+  font-size: 3rem;
+  text-decoration: none;
+}
+
+.nav-wrapper .active {
+  float: left;
+}
+
+.nav-wrapper .cart {
+  float: right;
+}
+
+.nav-wrapper a:hover {
+  background-color: var(--white);
+  color: black;
+}
+
+.nav-wrapper a.active {
+  background-color: var(--blue);
+  color: white;
+}
+
+.div-cart {
+  font-weight: normal;
+  font-size: 1.5rem;
+}
+
+.remove-product-button {
+  color: var(--blue);
+}
+
+.cart-items {
+  font-size: 2rem;
+  color: var(--yellow);
+}
+
+.cart-empty {
+  font-size: 1.8rem;
+  color: var(--blue) !important;
+  text-align: center;
+}
+
+@media only screen and (max-width: 600px){
+  .sidebar {
+    position: inline;
+    top: 2rem;
+    left: 3rem;
+    width: 80%;
+  } 
+  header {
+    margin-left: 0rem;
+    margin-top: 7rem;
+  }
+  main {
+    margin-left: 0rem;
+  }
+  header h1 {
+    font-size: 2.3rem;
+  }
+  .nav-wrapper a {
+    padding: 2rem;
+    font-size: 2.2rem;
+  }
+  .nav-wrapper a:hover {
+    background-color: var(--dark);
+    color: var(--white);
+  }
+}

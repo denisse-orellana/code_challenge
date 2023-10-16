@@ -21,16 +21,16 @@ cd code_challenge
 Install the dependencies:
 
 ```console
-  pip install pandas
-  pip install fugue
-  pip install "fugue[sql]"
+pip install pandas
+pip install fugue
+pip install "fugue[sql]"
 ```
 
 Finally, run the code to start the ETL process. 
 This will generate 2 files: ```cleaned_data.csv``` and ```cleaned_data_after_sql.csv```.
 
 ```console
-  python3 main.py
+python3 main.py
 ```
 
 ## Workflow description
@@ -138,5 +138,34 @@ Sprint description and details of the tasks' project are in Trello: [Code Challe
 
 ## Javascript snippet
 
+The folder ```js-project``` contains a small JavaScript project fetching data from MELI API and with Axios Library.
 
+```js
+// ./js-project/app.js
+
+const mostrarProductosML = async() => {
+    try {
+        const response = await axios.get(url, {
+            params: {
+                q: 'tecnología'
+            },
+        })
+        if (response.status === 200) {
+            const data = response.data
+            console.log(data)
+            return data
+        } else if (response.status = 404) {
+            console.log('The product cannot be found.')
+        } else {
+            console.log('Ups.. Something went wrong.')
+        }
+    } catch (error) {
+        console.error(error)
+    }
+}
+```
+
+The full project can be seen from: 
+* [Github: Ecommerce-App](https://github.com/denisseee/Ecommerce-App)
+* [Production: Ecommerce-App](https://denisseee.github.io/Ecommerce-App/)
 
