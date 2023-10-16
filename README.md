@@ -169,6 +169,8 @@ My system required other specifiations to execute the code:
 
 Sprint description and details of the tasks' project are in Trello: [Code Challenge](https://trello.com/b/xL9BLXt2/code-challenge).
 
+<p align="left"><img width="100%" src="./images/trello.png"></p>
+
 ## Javascript snippet
 
 The folder ```js-project``` contains a small JavaScript project fetching data from MELI API and with Axios Library.
