@@ -132,6 +132,33 @@ See the results from the terminal:
 Check the schema and the preview from BigQuery:
 <p align="left"><img width="100%" src="./images/data_bigquery.png"></p>
 
+## Execute a Cronjob
+The cronjob will execute ```main.py``` on bash to generate a new ```cleaned_data_after_sql.csv``` every minute, updating the data.
+
+Install Crontab to execute a cronjob:
+```console
+pip install python-crontab
+```
+
+Find the path of Python on the console:
+```console
+  which python3
+  /usr/local/bin/python3
+```
+
+Open the editor:
+```console
+  crontab -e
+```
+
+Add the code to the editor to execute the cronjob. The default code is:
+```console
+* * * * * /usr/local/bin/python3 /Users/denisse/code_challenge_2023/main.py >> /tmp/test.txt
+```
+
+My system required other specifiations to execute the code:
+<p align="left"><img width="100%" src="./images/vim.png"></p>
+
 ## Trello
 
 Sprint description and details of the tasks' project are in Trello: [Code Challenge](https://trello.com/b/xL9BLXt2/code-challenge).
