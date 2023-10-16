@@ -9,7 +9,33 @@ Project that performs ETL process with extraction, cleaning, transformation, and
 This project extracts data of the
 [Health Nutrition and Population Statistics](https://www.kaggle.com/datasets/theworldbank/health-nutrition-and-population-statistics/) from the World Bank stored in [Kaggle.com](https://www.kaggle.com/).
 
-## Cleaning
+## Getting started
+
+Clone the repository in the folder:
+
+```console
+git clone git@github.com:denisseee/code_challange.git code_challenge
+cd code_challenge
+```
+
+Install the dependencies:
+
+```console
+  pip install pandas
+  pip install fugue
+  pip install "fugue[sql]"
+```
+
+Finally, run the code to start the ETL process. 
+This will generate 2 files: ```cleaned_data.csv``` and ```cleaned_data_after_sql.csv```.
+
+```console
+  python3 main.py
+```
+
+## Workflow description
+
+### 1. Cleaning
 The data is imported from the .CSV and inspected.
 
 ```py
@@ -25,7 +51,7 @@ df.dtypes
 df.describe()
 ```
 
-## Transfomation
+### 2. Transfomation
 The manipulation data drops any duplicates, transform NaN values, and delete empty rows without indicators or any information.
 
 ```py
@@ -52,7 +78,7 @@ The data is exported to .CSV file:
 df.to_csv('cleaned_data.csv', index=False)
 ```
 
-## SQL
+### 3. SQL
 The data is manipulated in SQL, selected by Code, Country, Indicator, and the last 6 years.
 
 ```sql
@@ -75,7 +101,7 @@ The data is manipulated in SQL, selected by Code, Country, Indicator, and the la
   PRINT
 ```
 
-The results from the query is exported to a new .CSV file:
+The results from the query are exported to a new .CSV file:
 ```py
 # Export sql data to data csv
 sql_table = fugue_sql(query)
@@ -87,17 +113,17 @@ df2.to_csv('cleaned_data_after_sql.csv', index=False)
 The data is loaded to BigQuery with GCP SDK.
 
 From GCP SDK, set or create a project:
-```terminal
+```console
 ➜  google-cloud-sdk gcloud config set project `PROJECT ID`
 ```
 
 Upload file ```cleaned_data_after_sql.csv``` to BigQuery with the next CLI command:
-```terminal
+```console
 ➜  google-cloud-sdk bq load --source_format=CSV --skip_leading_rows=1 population_data.population /Users/denisse/code_challenge_2023/cleaned_data_after_sql.csv code:string,country:string,indicator:string,2010:float,2011:float,2012:float,2013:float,2014:float,2015:float     
 ```
 
 See the results from the terminal:
-```terminal
+```console
 ➜  google-cloud-sdk bq show population_data.population
 ```
 
