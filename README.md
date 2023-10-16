@@ -142,13 +142,13 @@ pip install python-crontab
 
 Find the path of Python on the console:
 ```console
-  which python3
-  /usr/local/bin/python3
+which python3
+/usr/local/bin/python3
 ```
 
 Open the editor:
 ```console
-  crontab -e
+crontab -e
 ```
 
 Add the code to the editor to execute the cronjob. The default code is:
