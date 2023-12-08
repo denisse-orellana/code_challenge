@@ -135,7 +135,7 @@ Check the schema and the preview from BigQuery:
 
 <p align="left"><img width="100%" src="./images/data_bigquery.png"></p>
 
-## Execute a Cronjob
+## Cronjob
 The cronjob will execute ```main.py``` on bash to generate a new ```cleaned_data_after_sql.csv``` every minute, updating the data.
 
 Install Crontab to execute a cronjob:
